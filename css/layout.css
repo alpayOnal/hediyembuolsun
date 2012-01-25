@@ -1,0 +1,84 @@
+#banner{
+	margin:0;
+	padding:0;
+	height:44px;
+	background:url(../images/bannerBg.png) #fff repeat-x;
+	overflow:hidden;
+}
+
+#logo{
+	float:left;
+	background-image:url(../images/logo.png);
+	margin-left:15px;
+	width:115px;
+	height:44px;
+}
+
+#topMenu{
+	float:left;
+	overflow:hidden;
+	margin:0 0 0 15px;
+	height:33px;
+	color:#fff;
+}
+#topMenu li{
+	float:left;
+	padding:7px 0 8px 0;
+}
+#topMenu a{
+	padding:7px 12px 8px 12px;
+	font:normal 18px sans-serif;
+	text-shadow: 1px 1px black, 1px 1px white;
+	color:#fff;
+}
+#topMenu a:hover,#topMenu a.active{
+	/*background:url(../images/topMenuHoverBg.png) repeat-x;*/
+	text-shadow: 1px  1px 10px #fff;
+}
+
+/* BEGIN - Word Search Form On Banner */
+
+form#wordSearch{
+	float:right;
+	margin:4px 10px 0 10px;
+	width:200px;
+	height:24px;
+	/*background:url(../images/inputBoxBg.png) #fff repeat-x;*/
+	background:#fff;
+	overflow:hidden;
+
+	/*Box Radius*/
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-khtml-border-radius:2px;
+	-webkit-border-radius:2px;
+	
+	/* Box Shadow */
+	box-shadow:inset 0px 0px 5px #000;
+	-moz-box-shadow:inset 0px 0px 5px #000;
+	-webkit-box-shadow:inset 0px 0px 5px #000;
+	/* For IE 8 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=90, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=90, Color='#000000');
+}
+form#wordSearch input{
+	float:left;
+	margin:2px 0 0 2px;
+	width:160px;
+	height:16px;
+	padding:1px 1px 1px 2px;
+	font:normal 1.4em verdana,sans-serif,cantarell,"trebuchet ms",arial,"bitstream vera sans";
+	border:none;
+	background:none;
+	outline:none;
+}
+form#wordSearch img{
+	float:right;
+	width:20px;
+	height:20px;
+	margin:2px 3px 0 0;
+	cursor:pointer;
+}
+
+/* END - Word Search Form On Banner */

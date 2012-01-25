@@ -1,0 +1,68 @@
+/*
+.profileForm label{
+	display:inline-block;
+	width:80px;
+}
+.profileForm input[type=text],
+	.profileForm input[type=password],
+	.profileForm select{
+	width:150px;
+}
+.profileForm input[type=button]{
+	margin-left:0;
+}
+*/
+.profilePage{
+	width:765px;
+	margin:20px auto;
+	overflow:hidden;
+}
+.profileForm input[type=text],
+	.profileForm input[type=password],
+	.profileForm select{
+	width:150px;
+}
+.profileForm input[type=button]{
+	margin-left:0;
+}
+.profileForm .fLabel{
+	width:90px;
+}
+.profileForm .fInput{
+	width:260px;
+}
+.profileForm{
+	/*Box Radius*/
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+	float:left;
+	margin:5px;
+	border:1px solid #D2D2D2;
+	width:350px;
+	height:220px;
+	padding:10px;
+	
+	/* Box Shadow */
+	box-shadow:0px 0px 7px #555;
+	-moz-box-shadow:0px 0px 7px #555;
+	-webkit-box-shadow:0px 0px 7px #555;
+	/* For IE 8 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#555555')";
+	/* For IE 5.5 - 7 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#555555');
+}
+.profileForm img.question{
+	cursor:pointer;
+}
+.profileForm img.calendar{
+	cursor:pointer;
+	margin-left:3px;
+}
+
+.profileForm.email,.profileForm.practice{
+	height:160px;
+}
+

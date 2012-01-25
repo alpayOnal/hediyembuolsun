@@ -1,0 +1,10 @@
+.registerForm label{
+	display:inline-block;
+	width:80px;
+}
+.registerForm input[type=text],.registerForm input[type=password]{
+	width:150px;
+}
+.registerForm input[type=submit]{
+	margin-left:0;
+}

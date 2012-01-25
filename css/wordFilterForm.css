@@ -1,0 +1,31 @@
+.wordFilterForm{
+	overflow:hidden;
+}
+.wordFilterForm .frow{
+	overflow:hidden;
+	margin-bottom:5px;
+}
+.wordFilterForm .felement{
+	margin-right:8px;
+	float:left;
+	width:145px;
+}
+.wordFilterForm .felement .flabel{
+	float:left;
+	width:40px;
+	margin-right:4px;
+	margin-top:5px;
+	text-align:right;
+}
+.ui-dropdownchecklist {
+	z-index:2000000!important;
+	width:95px;
+}
+.levelRange{
+	margin:4px 0 0 4px;
+	width:90px;
+	display:inline-block;
+}
+.wordFilterForm .keyword{
+	width:85px;
+}

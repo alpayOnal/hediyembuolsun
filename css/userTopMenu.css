@@ -1,0 +1,137 @@
+#userTopMenu{
+	float:right;
+	margin:0;
+	padding:0 10px 0 10px;
+	height:33px;
+	font:normal 11px/33px sans;
+	color:#fff;
+	/*background:#106e8b;*/
+	overflow:hidden;
+	text-align:center;
+	
+	/* Box Shadow */
+	box-shadow:0px 0px 7px #555;
+	-moz-box-shadow:0px 0px 7px #555;
+	-webkit-box-shadow:0px 0px 7px #555;
+	/* For IE 8 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#555555')";
+	/* For IE 5.5 - 7 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#555555');
+
+	/* Gradient */
+	/*
+	background: -moz-linear-gradient(270deg,#2c9bbd,#106e8b);
+	background: -webkit-linear-gradient(270deg,#2c9bbd,#106e8b);
+	background: -o-linear-gradient(270deg,#2c9bbd,#106e8b);
+	background: -ms-linear-gradient(270deg,#2c9bbd,#106e8b);
+	filter: progid:DXImageTransform.Microsoft.gradient(
+		startColorstr='#2c9bbd',endColorstr='#106e8b',GradientType=0 
+	);
+	background: linear-gradient(270deg,#2c9bbd,#106e8b);
+	*/
+	text-shadow:1px 1px #222,1px 1px white;
+}
+#userTopMenu:hover{
+	text-shadow:1px 1px 10px white;
+}
+#userTopMenu img{
+	width:16px;
+	height:16px;
+	margin-left:4px;
+}
+#userSubTopMenu{
+	display:none;
+	position:absolute;
+	top:44px;
+	right:0px;
+	margin-top:-10px;
+	padding:10px;
+	background:#25819E;
+	overflow:hidden;
+
+	/*Box Radius*/
+	border-radius:0 0 5px 5px;
+	-moz-border-radius:0 0 5px 5px;
+	-khtml-border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+
+	/* Box Shadow */
+	box-shadow:0px 0px 10px #555;
+	-moz-box-shadow:0px 0px 10px #555;
+	-webkit-box-shadow:0px 0px 10px #555;
+	/* For IE 8 */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#555555')";
+	/* For IE 5.5 - 7 */
+	filter:progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#555555');
+}
+/* BEGIN - For forms */
+#userSubTopMenu form{
+	float:right;
+	border:none;
+	margin:0;
+	padding:0;
+	width:270px;
+
+	/* Box Shadow */
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	/* For IE 8 */
+	-ms-filter:none;
+	/* For IE 5.5 - 7 */
+	filter:none;
+}
+#userSubTopMenu form .frmTitle{
+	font:normal 14px helvetica;
+	text-shadow:1px 1px black,1px 1px white;
+	color:white;
+	border-bottom:1px solid #3391ae;
+}
+#userSubTopMenu form .fInput{
+	width:180px;
+}
+#userSubTopMenu form label{
+	width:90px;
+	color:white;
+	font:normal 12px/27px sans-serif;
+	text-shadow:1px 1px black,1px 1px white;
+	color:white;
+}
+#userSubTopMenu form input[type="text"],
+#userSubTopMenu form input[type="password"]{
+	width:150px;
+	border:2px solid #5b96aa;
+	outline:none;
+}
+#userSubTopMenu form input[type="submit"]{
+	margin-left:0;
+}
+/* END - For forms */
+
+/* BEGIN - For menu */
+ul#userSubTopMenu{
+	width:150px;
+	padding:0;
+}
+ul#userSubTopMenu li a{
+	display:block;
+	padding:5px 10px 5px 10px;
+	font:normal 11px sans;
+	color:white;
+	text-shadow:1px 1px #222,1px 1px white;
+}
+ul#userSubTopMenu li a:hover{
+	background:#318ba7;
+}
+ul#userSubTopMenu li a img{
+	margin-right:10px;
+}
+/* END - For menu */
+
+#userSubTopMenu .loginForm a.showRegisterForm,
+#userSubTopMenu .registerForm a.showLoginForm{
+	font:normal 12px verdana;
+	color:white;
+}
+
+
