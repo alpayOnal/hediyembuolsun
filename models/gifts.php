@@ -26,10 +26,29 @@ class gifts
 	 */
 	public function add($userId,$title){
 		
-		$sql='insert into gifts(userId,title) 
+		// daha önceden benzer bir hediye tanımı yapıldı ise false döner
+		$sql='select id from gifts where 
+			title=\''.$this->db->escape($title).'\' and
+			userId=\''.$this->db->escape($userId).'\'
+			 limit 1';
+		$r=$this->db->fetchFirst($sql);
+		if ($r) return false;
+		
+		// en son sıra numarası alınıyor
+		$sql='select row from gifts order by row desc limit 1';
+		$r=$this->db->fetchFirst($sql);
+		
+		if (!$r)
+			$row=1;
+		else
+			$row=$r->row+1;
+		
+		
+		$sql='insert into gifts(userId,title,row) 
 			values(
 			\''.$this->db->escape($userId).'\',
-			\''.$this->db->escape(serialize($title)).'\')';
+			\''.$this->db->escape($title).'\',
+			\''.$this->db->escape($row).'\')';
 		
 		if ($this->db->query($sql))
 			return true;
@@ -47,7 +66,7 @@ class gifts
 	 */
 	public function delete($userId,$giftId){
 		
-		$sql='delete from gifts where 
+		$sql='update gifts set removed=1 where 
 			userId=\''.$this->db->escape($userId).'\' and 
 			id=\''.$this->db->escape($giftId).'\'';			
 		
@@ -59,7 +78,7 @@ class gifts
 	
 	
 	/**
-	 * hediyenin alınıp alınmama durumunu günceller
+	 * hediyelerin listesini verir.
 	 * 
 	 * @param int $userId
 	 * @param int $giftId
@@ -70,12 +89,14 @@ class gifts
 	public function getGifts($userId){
 		
 		$sql='
-			select * from 
-				gifts 
-			order by row asc';			
+			select id,title,row,status from gifts
+			where userId=\''.$this->db->escape($userId).'\' and 
+			removed=\'0\' 
+			order by row desc';			
+		$r=$this->db->fetch($sql);
 		
-		if ($this->db->query($sql))
-			return true;
+		if ($r)
+			return $r;
 		else
 			return false;
 	}
@@ -107,6 +128,32 @@ class gifts
 	}
 	
 	/**
+	 * hediyenin derecesini günceller
+	 * 
+	 * @param int $userId
+	 * @param int $giftId
+	 * @param int $rate
+	 * @access public
+	 * @return bool
+	 */
+	public function changeRate($userId,$giftId,$rate){
+		
+		$sql='
+			update 
+				gifts 
+			set 
+				rate=\''.$this->db->escape($rate).'\'
+			where
+				userId=\''.$this->db->escape($userId).'\' and 
+				id=\''.$this->db->escape($giftId).'\'';			
+		
+		if ($this->db->query($sql))
+			return true;
+		else
+			return false;
+	}
+	
+	/**
 	 * hediyelerin sıralarını günceller
 	 * 
 	 * @param int $userId
@@ -115,14 +162,14 @@ class gifts
 	 * @access public
 	 * @return bool
 	 */
-	public function changeOrder($userId,$gifts,$rows){
-				
+	public function changeOrder($userId,$gifts){
+		
 		foreach($gifts as $i=>$gift){
 			$sql='
 			update 
 				gifts 
 			set 
-				row=\''.$this->db->escape($rows[$i]).'\'
+				row=\''.$this->db->escape($i).'\'
 			where
 				userId=\''.$this->db->escape($userId).'\' and 
 				id=\''.$this->db->escape($gift).'\'';			
@@ -132,9 +179,9 @@ class gifts
 			if (!$r)
 				return false;			
 		}
-	}
-	
-	
-	
+		
+		return true;
+	}	
 }
+
 ?>

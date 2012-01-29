@@ -1,0 +1,12 @@
+rewriteengine On
+RewriteRule ^users /main.php?_controller=users?&%{QUERY_STRING}
+RewriteRule ^gifts /main.php?_controller=gifts?&%{QUERY_STRING}
+RewriteRule ^$ /main.php?_controller=index?&%{QUERY_STRING}
+
+
+#RewriteCond %{REQUEST_URI} \.css$
+#RewriteRule ^.*css\/(.*)$ css/$1 [L]
+
+#RewriteCond %{REQUEST_URI} \.js$
+#RewriteRule ^.*js\/(.*)$ js/$1 [L]
+

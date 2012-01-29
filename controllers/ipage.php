@@ -8,7 +8,6 @@ class ipage extends controllers
 	public function isSession(){
 		if(isset($this->u->id)){
 			$this->isLogined=true;
-			$this->vocabulary=new kelimeci\vocabulary($this->u->id);
 		}
 		else{
 			$this->isLogined=false;
@@ -28,11 +27,8 @@ class ipage extends controllers
 		parent::initialize();
 		$this->addLib('db');
 		$this->addModel(array(
-			'dictionary',
-			'words',
-			'vocabulary',
-			'tests',
-			'users'
+			'users',
+			'gifts'
 		));
 
 		$this->isSession();

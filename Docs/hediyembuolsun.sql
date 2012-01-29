@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.7.1
+-- version 3.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 26, 2012 at 11:29 AM
+-- Generation Time: Jan 29, 2012 at 02:24 AM
 -- Server version: 5.1.57
 -- PHP Version: 5.3.6
 
@@ -30,9 +30,10 @@ CREATE TABLE IF NOT EXISTS `gifts` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `userId` bigint(20) unsigned NOT NULL,
   `title` tinytext COLLATE utf8_turkish_ci NOT NULL,
+  `rate` tinyint(4) NOT NULL COMMENT 'hediyenin derecesi 0-10 arası değer alır',
   `row` tinyint(4) NOT NULL COMMENT 'hediyelerin sırasını gösterir integer değerler alır',
-  `removed` tinyint(4) NOT NULL,
-  `status` varchar(1) COLLATE utf8_turkish_ci NOT NULL COMMENT 'alındı 1,alınmadı 0',
+  `removed` tinyint(1) NOT NULL COMMENT 'hediye silinir ise 1 , varsa 0 değerini alınır',
+  `status` tinyint(1) NOT NULL COMMENT 'alındı 1,alınmadı 0',
   `crtDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`)

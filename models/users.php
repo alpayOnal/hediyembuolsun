@@ -38,8 +38,8 @@ class users
 			$sql='insert into 
 				users(fname,lname,email,city,birthDate,origin,metadata) 
 				values(
-				\''.$this->db->escape($fields->fname).'\',
-				\''.$this->db->escape($fields->lname).'\',
+				\''.$this->db->escape($fields->first_name).'\',
+				\''.$this->db->escape($fields->last_name).'\',
 				\''.$this->db->escape($fields->email).'\',
 				\''.$this->db->escape($fields->user_hometown).'\',
 				\''.$this->db->escape($fields->user_birthday).'\',
@@ -87,6 +87,37 @@ class users
 			return $r;
 		else
 			return false;
-	}	
+	}
+	
+	/**
+	 * gönderilen alanla ilgili kullanıcı var mı yok mu kontrol eder.
+	 * 
+	 * @param string $field
+	 * @param string $value
+	 * 
+	 * @return bool
+	 * */
+	public function checkUserInfo($field,$value){
+		
+		$sql='select * from  users where '.$this->db->escape($field).'=\''.
+			$this->db->escape($value).'\'';
+		
+		if (count($this->db->fetch($sql))>0)
+			return true;
+		else 
+			return false;
+	}
+	
+	/**
+	 * kullanıcı id sine bağlı bilgileri verir.
+	 * 
+	 * 
+	 * @return object
+	 * */
+	public function getUserInfo($userId){
+	
+		$sql='select * from users where id=\''.$userId.'\' limit 1';
+		return $this->db->fetchFirst($sql);
+	}
 }
 ?>
